@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Prime">#A64600</color>
+    <color name="Numerical">#ADADAD</color>
+    <color name="Zero">#FF8033</color>
+    <color name="AC">#FF3377</color>
+    <color name="C">#337DFF</color>
 </resources>
