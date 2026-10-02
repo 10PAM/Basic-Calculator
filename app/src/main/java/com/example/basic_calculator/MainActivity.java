@@ -8,6 +8,7 @@
  */
 
 package com.example.basic_calculator;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -50,6 +51,30 @@ public class MainActivity extends AppCompatActivity {
         });
         resultTV = findViewById(R.id.result_tv);
         solutionTV = findViewById(R.id.solution_tv);
+
+        assignID(buttonC, R.id.button_c);
+        assignID(buttonBrackOpen, R.id.button_open_bracket);
+        assignID(buttonBrackClose, R.id.button_close_bracket);
+
+        assignID(button0, R.id.button_0);
+        assignID(button1, R.id.button_1);
+        assignID(button2, R.id.button_2);
+        assignID(button3, R.id.button_3);
+        assignID(button4, R.id.button_4);
+        assignID(button5, R.id.button_5);
+        assignID(button6, R.id.button_6);
+        assignID(button7, R.id.button_7);
+        assignID(button8, R.id.button_8);
+        assignID(button9, R.id.button_9);
+
+        assignID(buttonMul, R.id.button_c);
+        assignID(buttonPlus, R.id.button_plus);
+        assignID(buttonSub, R.id.button_minus);
+        assignID(buttonDivide, R.id.button_divide);
+        assignID(buttonEquals, R.id.button_equals);
+
+        assignID(buttonAC, R.id.button_ac);
+        assignID(buttonDot, R.id.button_dot);
     }
 
     /**
@@ -60,15 +85,46 @@ public class MainActivity extends AppCompatActivity {
      */
     void assignID(MaterialButton btn, int id) {
         btn = findViewById(id);
-
+        btn.setOnClickListener(this::onClick);
     }
 
     /**
      * Handles button click logic
      *
-     * @param v
+     * @param view
      */
-    public void onClick(View v) {
+    public void onClick(View view) {
+        MaterialButton button = (MaterialButton) view;
+        String buttonText = button.getText().toString();
+        String dataToCalc = solutionTV.getText().toString();
 
+        if(buttonText.equals("AC")) {
+            solutionTV.setText("");
+            solutionTV.setText("0");
+            return;
+        }
+
+        if(buttonText.equals("=")) {
+            solutionTV.setText(resultTV.getText());
+            return;
+        }
+
+        if(buttonText.equals("C")) {
+            dataToCalc = dataToCalc.substring(0, dataToCalc.length() - 1);
+        } else {
+            dataToCalc = dataToCalc + buttonText;
+        }
+
+        solutionTV.setText(dataToCalc);
+
+        //String finalResult = getResults();
+    }
+
+    String getResults(String data) {
+        try {
+            Context context = Context.;
+        } catch (Exception e) {
+            return "Err";
+        }
     }
 }
