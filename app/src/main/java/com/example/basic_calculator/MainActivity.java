@@ -126,6 +126,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Calculates data.
+     *
+     * @param data
+     * @return
+     */
     String getResults(String data) {
         try {
             Context context = Context.enter();
