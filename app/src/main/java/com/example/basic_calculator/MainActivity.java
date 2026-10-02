@@ -1,13 +1,23 @@
+/**
+ * Programmers {
+ *     Mario Aguilera Piceno - ID: 49998581
+ * }
+ * About: Handles the main interaction logic of the application.
+ * Date: 09/30/2026
+ * Modified: 10/2/2026
+ */
+
 package com.example.basic_calculator;
-
 import android.os.Bundle;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * Main App Class: MainActivity
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
