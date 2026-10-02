@@ -19,7 +19,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.button.MaterialButton;
-import com.faendir.rhino_android.*;
+
 import org.mozilla.javascript.*;
 
 //import android.content.Context; // Unused
@@ -34,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
      * UI Fields
      */
     TextView resultTV, solutionTV;
-    MaterialButton buttonC, buttonBrackOpen, buttonBrackClose;
-    MaterialButton button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
-    MaterialButton buttonMul, buttonPlus, buttonSub, buttonDivide, buttonEquals;
-    MaterialButton buttonAC, buttonDot;
 
     /**
      * Default settings
@@ -65,39 +61,38 @@ public class MainActivity extends AppCompatActivity {
         resultTV = findViewById(R.id.result_tv);
         solutionTV = findViewById(R.id.solution_tv);
 
-        assignID(buttonC, R.id.button_c);
-        assignID(buttonBrackOpen, R.id.button_open_bracket);
-        assignID(buttonBrackClose, R.id.button_close_bracket);
+        assignID(R.id.button_c);
+        assignID(R.id.button_open_bracket);
+        assignID(R.id.button_close_bracket);
 
-        assignID(button0, R.id.button_0);
-        assignID(button1, R.id.button_1);
-        assignID(button2, R.id.button_2);
-        assignID(button3, R.id.button_3);
-        assignID(button4, R.id.button_4);
-        assignID(button5, R.id.button_5);
-        assignID(button6, R.id.button_6);
-        assignID(button7, R.id.button_7);
-        assignID(button8, R.id.button_8);
-        assignID(button9, R.id.button_9);
+        assignID(R.id.button_0);
+        assignID(R.id.button_1);
+        assignID(R.id.button_2);
+        assignID(R.id.button_3);
+        assignID(R.id.button_4);
+        assignID(R.id.button_5);
+        assignID(R.id.button_6);
+        assignID(R.id.button_7);
+        assignID(R.id.button_8);
+        assignID(R.id.button_9);
 
-        assignID(buttonMul, R.id.button_mul);
-        assignID(buttonPlus, R.id.button_plus);
-        assignID(buttonSub, R.id.button_minus);
-        assignID(buttonDivide, R.id.button_divide);
-        assignID(buttonEquals, R.id.button_equals);
+        assignID(R.id.button_mul);
+        assignID(R.id.button_plus);
+        assignID(R.id.button_minus);
+        assignID(R.id.button_divide);
+        assignID(R.id.button_equals);
 
-        assignID(buttonAC, R.id.button_ac);
-        assignID(buttonDot, R.id.button_dot);
+        assignID(R.id.button_ac);
+        assignID(R.id.button_dot);
     }
 
     /**
      * Assigns button click listener to buttons.
      *
-     * @param btn The button being assigned an click listener.
      * @param id The id of the button.
      */
-    void assignID(MaterialButton btn, int id) {
-        btn = findViewById(id);
+    void assignID(int id) {
+        MaterialButton btn = findViewById(id);
         btn.setOnClickListener(this::onClick);
     }
 
