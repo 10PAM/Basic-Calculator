@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         assignID(button8, R.id.button_8);
         assignID(button9, R.id.button_9);
 
-        assignID(buttonMul, R.id.button_c);
+        assignID(buttonMul, R.id.button_mul);
         assignID(buttonPlus, R.id.button_plus);
         assignID(buttonSub, R.id.button_minus);
         assignID(buttonDivide, R.id.button_divide);
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(buttonText.equals("AC")) {
             solutionTV.setText("");
-            solutionTV.setText("0");
+            resultTV.setText("0");
             return;
         }
 
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         if(buttonText.equals("C")) {
             dataToCalc = dataToCalc.substring(0, dataToCalc.length() - 1);
         } else {
-            dataToCalc = dataToCalc + buttonText;
+            dataToCalc += buttonText;
         }
 
         solutionTV.setText(dataToCalc);
