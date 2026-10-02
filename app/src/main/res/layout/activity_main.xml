@@ -14,11 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="0"
-        android:textSize="32dp"
+        android:text="Aguilera Piceno | 49998581"
+        android:textSize="28dp"
         android:textColor="@color/white"
         android:textAlignment="textEnd"
-        app:layout_constraintBottom_toTopOf="@+id/result_tv"/>
+        app:layout_constraintBottom_toTopOf="@+id/result_tv"
+        android:background="@color/Result_Background"/>
 
     <TextView
         android:id="@+id/result_tv"
@@ -29,9 +30,12 @@
         android:textSize="64dp"
         android:textColor="@color/white"
         android:textAlignment="textEnd"
-        app:layout_constraintBottom_toTopOf="@+id/button_layout"/>
+        android:backgroundTint="@color/Solution_Background"
+        app:layout_constraintBottom_toTopOf="@+id/button_layout"
+        android:background="@color/Solution_Background"/>
     <!--Output UI End-->
 
+    <!--Calculator Buttons Start-->
     <LinearLayout
         android:id="@+id/button_layout"
         android:layout_width="match_parent"
@@ -311,5 +315,6 @@
         <!--Button Row 5 End-->
 
     </LinearLayout>
+    <!--Calculator Buttons SEnd-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

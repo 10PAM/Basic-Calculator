@@ -1,14 +1,14 @@
 /**
  * Programmers {
- *     Mario Aguilera Piceno - ID: 49998581
+ *     Mario Aguilera Piceno - CWU ID: 49998581
  * }
- * About: Handles the main interaction logic of the application.
+ * About: Handles the main interaction logic of the application. Based on Professor Zhu's
+ * video lectures.
  * Date: 09/30/2026
  * Modified: 10/2/2026
  */
 
 package com.example.basic_calculator;
-//import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -22,12 +22,17 @@ import com.google.android.material.button.MaterialButton;
 import com.faendir.rhino_android.*;
 import org.mozilla.javascript.*;
 
+//import android.content.Context; // Unused
+
 
 /**
  * Main App Class: MainActivity
  */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * UI Fields
+     */
     TextView resultTV, solutionTV;
     MaterialButton buttonC, buttonBrackOpen, buttonBrackClose;
     MaterialButton button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
@@ -35,7 +40,12 @@ public class MainActivity extends AppCompatActivity {
     MaterialButton buttonAC, buttonDot;
 
     /**
-     * Program start..
+     * Default settings
+     */
+    private boolean firstInteraction = true;
+
+    /**
+     * App start.
      *
      * @param savedInstanceState If the activity is being re-initialized after
      *     previously being shut down then this Bundle contains the data it most
@@ -81,10 +91,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Assigns id to buttons
+     * Assigns button click listener to buttons.
      *
-     * @param btn
-     * @param id
+     * @param btn The button being assigned an click listener.
+     * @param id The id of the button.
      */
     void assignID(MaterialButton btn, int id) {
         btn = findViewById(id);
@@ -94,32 +104,54 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Handles button click logic
      *
-     * @param view
+     * @param view The button being clicked on.
      */
     public void onClick(View view) {
         MaterialButton button = (MaterialButton) view;
         String buttonText = button.getText().toString();
+
+        // Handles first interaction needs
+        if (firstInteraction) {
+            solutionTV.setText("");
+            firstInteraction = false;
+        }
+
         String dataToCalc = solutionTV.getText().toString();
 
+        // Clears Buffer Fully
         if(buttonText.equals("AC")) {
             solutionTV.setText("");
             resultTV.setText("0");
             return;
         }
 
+        // Calculates
         if(buttonText.equals("=")) {
             solutionTV.setText(resultTV.getText());
             return;
         }
 
+        // Clears Buffer by 1
         if(buttonText.equals("C")) {
-            dataToCalc = dataToCalc.substring(0, dataToCalc.length() - 1);
+            if (dataToCalc.length() >= 2) {
+                dataToCalc = dataToCalc.substring(0, dataToCalc.length() - 1);
+            } else {
+                solutionTV.setText("");
+                resultTV.setText("0");
+                return;
+            }
         } else {
-            dataToCalc += buttonText;
+            if (dataToCalc.length() == 1 && dataToCalc.equals("0")) {
+                dataToCalc = buttonText;
+            } else {
+                dataToCalc += buttonText;
+            }
         }
 
+        // Updates user input visuals
         solutionTV.setText(dataToCalc);
 
+        // Outputs calculated results
         String finalResult = getResults(dataToCalc);
         if(!finalResult.equals("Err")) {
             resultTV.setText(finalResult);
@@ -127,10 +159,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Calculates data.
+     * Performs calculations on input data.
      *
-     * @param data
-     * @return
+     * @param data The data containing the calculation input.
+     * @return Returns the final calculation as a String.
      */
     String getResults(String data) {
         try {

@@ -3,8 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Prime">#A64600</color>
-    <color name="Numerical">#ADADAD</color>
+    <color name="Numerical">#606664</color>
     <color name="Zero">#FF8033</color>
     <color name="AC">#FF3377</color>
     <color name="C">#337DFF</color>
+    <color name="Solution_Background">#3B6659</color>
+    <color name="Result_Background">#3F4241</color>
 </resources>
