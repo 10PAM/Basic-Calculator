@@ -36,7 +36,6 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
     implementation(libs.material)
-    implementation(libs.rhino)
     implementation(libs.rhino.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
