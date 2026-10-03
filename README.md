@@ -4,4 +4,4 @@
 <img width="300" height="600" alt="image" src="https://github.com/user-attachments/assets/736977e6-8a97-4d26-83aa-7b6dc66bc98b" />
 
 ### DEMO (Video):
-[![Video](https://youtu.be/isvWAGl1zJE)](https://youtu.be/isvWAGl1zJE)
+<img width="2666" height="1492" alt="image" href="https://www.youtube.com/watch?v=isvWAGl1zJE" src="https://github.com/user-attachments/assets/3d54b6c9-f0ae-46ff-9625-00083a371522" />
