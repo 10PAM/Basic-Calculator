@@ -1,3 +1,4 @@
 # LAB 1 - CS 460: Basic Calculator
 ## About: 
 #### This is an application that performs basic calculator equations.
+<img width="557" height="1083" alt="image" src="https://github.com/user-attachments/assets/736977e6-8a97-4d26-83aa-7b6dc66bc98b" />
