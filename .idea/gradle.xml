@@ -6,13 +6,13 @@
       <GradleProjectSettings>
         <option name="testRunner" value="CHOOSE_PER_TEST" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="E:\Programs\Gradle\gradle-9.7.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
-        <option name="myGradleHome" value="C:\MainDir\Programs\Gradle\gradle-9.6.0" />
       </GradleProjectSettings>
     </option>
   </component>

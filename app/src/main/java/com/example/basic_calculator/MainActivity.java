@@ -58,13 +58,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Output UI
         resultTV = findViewById(R.id.result_tv);
         solutionTV = findViewById(R.id.solution_tv);
 
+        // Clear Buttons
         assignID(R.id.button_c);
-        assignID(R.id.button_open_bracket);
-        assignID(R.id.button_close_bracket);
+        assignID(R.id.button_ac);
 
+        // Numerical Buttons
         assignID(R.id.button_0);
         assignID(R.id.button_1);
         assignID(R.id.button_2);
@@ -75,15 +78,17 @@ public class MainActivity extends AppCompatActivity {
         assignID(R.id.button_7);
         assignID(R.id.button_8);
         assignID(R.id.button_9);
+        assignID(R.id.button_open_bracket);
+        assignID(R.id.button_close_bracket);
+        assignID(R.id.button_dot);
 
+        // Operations Buttons
         assignID(R.id.button_mul);
         assignID(R.id.button_plus);
         assignID(R.id.button_minus);
         assignID(R.id.button_divide);
         assignID(R.id.button_equals);
 
-        assignID(R.id.button_ac);
-        assignID(R.id.button_dot);
     }
 
     /**
@@ -97,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Handles button click logic
+     * Handles calculator button interaction logic.
      *
      * @param view The button being clicked on.
      */
@@ -108,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         // Handles first interaction needs
         if (firstInteraction) {
             solutionTV.setText("");
+            resultTV.setText("0");
             firstInteraction = false;
         }
 
@@ -135,6 +141,19 @@ public class MainActivity extends AppCompatActivity {
                 resultTV.setText("0");
                 return;
             }
+        } else if ( (buttonText.equals("/") || buttonText.equals("*") || buttonText.equals("+"))
+                && (dataToCalc.isEmpty() ||
+                (dataToCalc.charAt(dataToCalc.length() - 1) == '/') ||
+                (dataToCalc.charAt(dataToCalc.length() - 1) == '*') ||
+                (dataToCalc.charAt(dataToCalc.length() - 1) == '-') ||
+                (dataToCalc.charAt(dataToCalc.length() - 1) == '+'))) {
+            return;
+        } else if( buttonText.equals("-") && !dataToCalc.isEmpty() &&
+                ((dataToCalc.charAt(dataToCalc.length() - 1) == '-') ||
+                        (dataToCalc.charAt(dataToCalc.length() - 1) == '/') ||
+                        (dataToCalc.charAt(dataToCalc.length() - 1) == '*') ||
+                        (dataToCalc.charAt(dataToCalc.length() - 1) == '+')) ) {
+            return;
         } else {
             if (dataToCalc.length() == 1 && dataToCalc.equals("0")) {
                 dataToCalc = buttonText;
