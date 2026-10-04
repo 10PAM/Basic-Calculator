@@ -1,6 +1,6 @@
 # LAB 1 - CWU CS460: Basic Calculator
 ## About: 
-#### This is an application that performs basic calculator equations. It was implemented based on the lab rubric for the assignment and Professor Shangyue Zhu's lectures on creating the core part of the calculator.
+#### This is an application that performs basic calculator equations. It was implemented based on Professor Shangyue Zhu's lectures on creating the core part of the calculator and the lab rubric for the assignment.
 
 ### Screenshot 1:
 <a href="https://www.youtube.com/watch?v=isvWAGl1zJE"><img width="300" height="600" alt="Screenshot 1" src="https://github.com/user-attachments/assets/736977e6-8a97-4d26-83aa-7b6dc66bc98b"></a>
