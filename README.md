@@ -13,4 +13,4 @@
 
 ### DEMO (Video):
 <a href="https://www.youtube.com/watch?v=isvWAGl1zJE"><img width="2666" height="1492" alt="Video" src="https://github.com/user-attachments/assets/3d54b6c9-f0ae-46ff-9625-00083a371522"></a>
-<a href="https://www.youtube.com/watch?v=isvWAGl1zJE">GoTo</a>
+<a href="https://www.youtube.com/watch?v=isvWAGl1zJE">( Video Link )</a>
